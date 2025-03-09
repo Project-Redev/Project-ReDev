@@ -5,6 +5,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.roadkill.redev.common.entity.LithicanEntity;
 import net.roadkill.redev.common.entity.RevenantEntity;
+import net.roadkill.redev.common.entity.arrows.AmethystArrowEntity;
 import net.roadkill.redev.core.init.EntityInit;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)

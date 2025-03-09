@@ -11,10 +11,8 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roadkill.redev.ReDev;
-import net.roadkill.redev.common.item.CarvedPumpkinItem;
-import net.roadkill.redev.common.item.HangingLadderItem;
-import net.roadkill.redev.common.item.HoglinArmorItem;
-import net.roadkill.redev.common.item.ItemNameBlockItem;
+import net.roadkill.redev.common.item.*;
+import net.roadkill.redev.common.item.arrows.*;
 import net.roadkill.redev.util.registries.ModArmorMaterials;
 import net.roadkill.redev.util.registries.ModItems;
 
@@ -29,6 +27,11 @@ public class ItemInit
     public static final DeferredHolder<Item, ArmorItem> HOGLIN_HIDE_CAP = ITEMS.registerItem("hoglin_hide_head", props -> new HoglinArmorItem(ModArmorMaterials.HOGLIN_HIDE, ArmorType.HELMET, props));
     public static final DeferredHolder<Item, ArmorItem> HOGLIN_HIDE_TUNIC = ITEMS.registerItem("hoglin_hide_cloak", props -> new HoglinArmorItem(ModArmorMaterials.HOGLIN_HIDE, ArmorType.CHESTPLATE, props));
     public static final DeferredHolder<Item, ArmorItem> HOGLIN_HIDE_HOOVES = ITEMS.registerItem("hoglin_hide_hooves", props -> new ArmorItem(ModArmorMaterials.HOGLIN_HIDE, ArmorType.BOOTS, props));
+    public static final DeferredHolder<Item, Item> BOUNCING_ARROW = ITEMS.registerItem("bouncing_arrow", props -> new BouncingArrowItem(props),  new Item.Properties().stacksTo(12));
+    public static final DeferredHolder<Item, Item> EXPLOSIVE_ARROW = ITEMS.registerItem("explosive_arrow", props -> new ExplosiveArrowItem(props),  new Item.Properties().stacksTo(12));
+    public static final DeferredHolder<Item, Item> QUARTZ_ARROW = ITEMS.registerItem("quartz_arrow", props -> new QuartzArrowItem(props),  new Item.Properties().stacksTo(12));
+    public static final DeferredHolder<Item, Item> AMETHYST_ARROW = ITEMS.registerItem("amethyst_arrow", props -> new AmethystArrowItem(props),  new Item.Properties().stacksTo(12));
+    public static final DeferredHolder<Item, Item> OBSIDIAN_ARROW = ITEMS.registerItem("obsidian_arrow", props -> new ObsidianArrowItem(props),  new Item.Properties().stacksTo(12));
 
     public static final DeferredHolder<Item, Item> WOOD_SCRAP = ITEMS.registerItem("wood_scrap", Item::new, new Item.Properties());
 

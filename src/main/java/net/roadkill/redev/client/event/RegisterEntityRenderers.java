@@ -69,6 +69,12 @@ public class RegisterEntityRenderers
         event.registerEntityRenderer(EntityInit.DURIAN_THORN.get(), DurianThornRenderer::new);
         event.registerEntityRenderer(EntityInit.DURIAN_THORN.get(), DurianThornRenderer::new);
         event.registerEntityRenderer(EntityInit.HOVERING_INFERNO.get(), HoveringInfernoRenderer::new);
+        event.registerEntityRenderer(EntityInit.BOUNCING_ARROW.get(), BouncingArrowRenderer::new);
+        event.registerEntityRenderer(EntityInit.EXPLOSIVE_ARROW.get(), ExplosiveArrowRenderer::new);
+        event.registerEntityRenderer(EntityInit.AMETHYST_ARROW.get(), AmethystArrowRenderer::new);
+        event.registerEntityRenderer(EntityInit.QUARTZ_ARROW.get(), QuartzArrowRenderer::new);
+        event.registerEntityRenderer(EntityInit.OBSIDIAN_ARROW.get(), ObsidianArrowRenderer::new);
+
     }
 
     @SubscribeEvent

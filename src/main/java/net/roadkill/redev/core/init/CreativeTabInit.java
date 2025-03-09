@@ -353,6 +353,15 @@ public class CreativeTabInit
                     ItemInit.NETHERITE_SHIELD.value(),
                     ItemInit.INFERNAL_PLATE.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            injectItemsAfter(Items.ARROW.getDefaultInstance(), event, List.of(
+                    ItemInit.BOUNCING_ARROW.value()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            injectItemsAfter(Items.ARROW.getDefaultInstance(), event, List.of(
+                    ItemInit.EXPLOSIVE_ARROW.value()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            injectItemsAfter(Items.ARROW.getDefaultInstance(), event, List.of(
+                    ItemInit.QUARTZ_ARROW.value()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         /*

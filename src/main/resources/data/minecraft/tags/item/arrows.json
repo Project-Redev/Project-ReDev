@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values":
+  [
+    "redev:bouncing_arrow",
+	"redev:explosive_arrow",
+	"redev:quartz_arrow",
+	"redev:amethyst_arrow",
+	"redev:obsidian_arrow"
+	
+  ]
+}

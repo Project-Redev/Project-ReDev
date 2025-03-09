@@ -9,14 +9,29 @@ import net.minecraft.world.entity.MobCategory;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roadkill.redev.ReDev;
-import net.roadkill.redev.common.entity.DurianThornEntity;
-import net.roadkill.redev.common.entity.HoveringInfernoEntity;
-import net.roadkill.redev.common.entity.LithicanEntity;
-import net.roadkill.redev.common.entity.RevenantEntity;
+import net.roadkill.redev.common.entity.*;
+import net.roadkill.redev.common.entity.arrows.*;
 
 public class EntityInit
 {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, ReDev.MOD_ID);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<BouncingArrowEntity>> BOUNCING_ARROW = ENTITY_TYPES.register("bouncing_arrow", () ->
+            EntityType.Builder.of(BouncingArrowEntity::new, MobCategory.MISC).sized(0.5f, 0.5f)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "bouncing_arrow"))));
+    public static final DeferredHolder<EntityType<?>, EntityType<ExplosiveArrowEntity>> EXPLOSIVE_ARROW = ENTITY_TYPES.register("explosive_arrow", () ->
+            EntityType.Builder.of(ExplosiveArrowEntity::new, MobCategory.MISC).sized(0.5f, 0.5f)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "explosive_arrow"))));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<QuartzArrowEntity>> QUARTZ_ARROW = ENTITY_TYPES.register("quartz_arrow", () ->
+            EntityType.Builder.of(QuartzArrowEntity::new, MobCategory.MISC).sized(0.5f, 0.5f)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "quartz_arrow"))));
+    public static final DeferredHolder<EntityType<?>, EntityType<AmethystArrowEntity>> AMETHYST_ARROW = ENTITY_TYPES.register("amethyst_arrow", () ->
+            EntityType.Builder.of(AmethystArrowEntity::new, MobCategory.MISC).sized(0.5f, 0.5f)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "amethyst_arrow"))));
+    public static final DeferredHolder<EntityType<?>, EntityType<ObsidianArrowEntity>> OBSIDIAN_ARROW = ENTITY_TYPES.register("obsidian_arrow", () ->
+            EntityType.Builder.of(ObsidianArrowEntity::new, MobCategory.MISC).sized(0.5f, 0.5f)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "obsidian_arrow"))));
 
     public static final DeferredHolder<EntityType<?>, EntityType<LithicanEntity>> LITHICAN = ENTITY_TYPES.register("lithican", () ->
             EntityType.Builder.of(LithicanEntity::new, MobCategory.MONSTER).sized(0.6f, 1.95f)

@@ -1,8 +1,10 @@
 package net.roadkill.redev.common.event;
 
+import net.minecraft.client.gui.font.glyphs.BakedGlyph;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.entity.monster.Monster;
@@ -11,8 +13,11 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+
 import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
+import net.neoforged.neoforge.event.entity.living.LivingHealEvent;
 import net.roadkill.redev.common.entity.HoveringInfernoEntity;
+import net.roadkill.redev.core.init.EffectInit;
 import net.roadkill.redev.util.registries.ModEntityTypes;
 
 @EventBusSubscriber
@@ -21,6 +26,7 @@ public class HandleMobSpawns
     @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
     public static class ModEvents
     {
+
         @SubscribeEvent
         public static void mobSpawnPlacements(RegisterSpawnPlacementsEvent event)
         {
@@ -36,6 +42,16 @@ public class HandleMobSpawns
         }
     }
 
+    @SubscribeEvent
+    public static void onLivingHeal(LivingHealEvent event) {
+        LivingEntity entity = event.getEntity();
+        var effects = entity.getActiveEffectsMap();
+        if(effects.containsKey(EffectInit.BLEEDING))
+        {
+            event.setAmount(((float)event.getAmount()* 0.4f));
+
+        }
+    }
     @SubscribeEvent
     public static void replaceBlazeSpawn(FinalizeSpawnEvent event)
     {
