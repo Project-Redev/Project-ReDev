@@ -75,6 +75,7 @@ public class RegisterEntityRenderers
         event.registerEntityRenderer(EntityInit.QUARTZ_ARROW.get(), QuartzArrowRenderer::new);
         event.registerEntityRenderer(EntityInit.OBSIDIAN_ARROW.get(), ObsidianArrowRenderer::new);
 
+        event.registerEntityRenderer(EntityInit.INK_ARROW.get(), InkArrowRenderer::new);
     }
 
     @SubscribeEvent

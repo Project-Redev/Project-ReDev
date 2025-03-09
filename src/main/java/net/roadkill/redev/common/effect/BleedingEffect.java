@@ -33,10 +33,8 @@ public class BleedingEffect extends MobEffect {
     public boolean applyEffectTick(ServerLevel level , LivingEntity entity, int amplifier) {
 
 
-        for (int i = 0; i < 8; i++) {
-            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, Blocks.REDSTONE_BLOCK.defaultBlockState()),
-                    entity.getEyePosition().x, entity.getEyePosition().y,entity.getEyePosition().z,1d,-0.5d,1d); //make vels random
-        }
+    level.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, Blocks.REDSTONE_BLOCK.defaultBlockState()),
+            entity.getEyePosition().x, entity.getEyePosition().y,entity.getEyePosition().z,10,1d,-0.5d,1d,5); //make vels random
 
         return true;
     }

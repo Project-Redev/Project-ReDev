@@ -33,6 +33,7 @@ public class ItemInit
     public static final DeferredHolder<Item, Item> AMETHYST_ARROW = ITEMS.registerItem("amethyst_arrow", props -> new AmethystArrowItem(props),  new Item.Properties().stacksTo(12));
     public static final DeferredHolder<Item, Item> OBSIDIAN_ARROW = ITEMS.registerItem("obsidian_arrow", props -> new ObsidianArrowItem(props),  new Item.Properties().stacksTo(12));
 
+    public static final DeferredHolder<Item, Item> INK_ARROW = ITEMS.registerItem("ink_arrow", props -> new InkArrowItem(props),  new Item.Properties().stacksTo(12));
     public static final DeferredHolder<Item, Item> WOOD_SCRAP = ITEMS.registerItem("wood_scrap", Item::new, new Item.Properties());
 
     public static final DeferredHolder<Item, Item> AURUM_NUGGET = ITEMS.registerSimpleItem("aurum_nugget", new Item.Properties());

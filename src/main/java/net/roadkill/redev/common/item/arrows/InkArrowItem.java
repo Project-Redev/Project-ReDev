@@ -11,6 +11,7 @@ import net.minecraft.world.item.ProjectileItem;
 import net.minecraft.world.level.Level;
 import net.roadkill.redev.ReDev;
 import net.roadkill.redev.common.entity.arrows.BouncingArrowEntity;
+import net.roadkill.redev.common.entity.arrows.InkArrowEntity;
 import net.roadkill.redev.core.init.EntityInit;
 
 import javax.annotation.Nullable;
@@ -23,7 +24,7 @@ public class InkArrowItem extends ArrowItem implements ProjectileItem {
 
    @Override
    public AbstractArrow createArrow(Level level, ItemStack ammo, LivingEntity shooter, @Nullable ItemStack weapon) {
-       BouncingArrowEntity arrow = new BouncingArrowEntity(EntityInit.BOUNCING_ARROW.get(), level);
+       InkArrowEntity arrow = new InkArrowEntity(EntityInit.INK_ARROW.get(), level);
        arrow.setOwner(shooter);
        arrow.setPos(shooter.getEyePosition());
        arrow.setXRot(shooter.getXRot());
@@ -35,7 +36,7 @@ public class InkArrowItem extends ArrowItem implements ProjectileItem {
 
     @Override
     public Projectile asProjectile(Level level, Position pos, ItemStack stack, net.minecraft.core.Direction direction) {
-        BouncingArrowEntity arrow = new BouncingArrowEntity(EntityInit.BOUNCING_ARROW.get(), level);
+        InkArrowEntity arrow = new InkArrowEntity(EntityInit.INK_ARROW.get(), level);
         arrow.pickup = AbstractArrow.Pickup.ALLOWED;
         arrow.setPos(pos.x(),pos.y(),pos.z());
         ReDev.LOGGER.debug("ARROW as projectile");
