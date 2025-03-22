@@ -6,13 +6,11 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.monster.Monster;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roadkill.redev.ReDev;
-import net.roadkill.redev.common.entity.DurianThornEntity;
-import net.roadkill.redev.common.entity.HoveringInfernoEntity;
-import net.roadkill.redev.common.entity.LithicanEntity;
-import net.roadkill.redev.common.entity.RevenantEntity;
+import net.roadkill.redev.common.entity.*;
 // import net.roadkill.redev.common.entity.Illusion;
 
 public class EntityInit
@@ -37,4 +35,8 @@ public static final DeferredHolder<EntityType<?>, EntityType<HoveringInfernoEnti
 // public static final DeferredHolder<EntityType<Illusion>, EntityType<Illusion>> ILLUSION = ENTITY_TYPES.register("illusion", () ->
 //         EntityType.Builder.of(Illusion::new, MobCategory.CREATURE).sized(0.9f, 0.9f)
 //                           .build(ResourceKey.create(Registries.ENTITY_TYPE, new ResourceLocation(ReDev.MOD_ID, "illusion"))));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<WitherWraith>> WITHER_WRAITH = ENTITY_TYPES.register("wither_wraith", () ->
+            EntityType.Builder.of(WitherWraith::new, MobCategory.MONSTER).sized(0.6f, 1.95f)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "wither_wraith"))));
 }

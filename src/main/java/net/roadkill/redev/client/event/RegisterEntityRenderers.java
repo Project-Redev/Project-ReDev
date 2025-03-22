@@ -1,25 +1,46 @@
 package net.roadkill.redev.client.event;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.data.models.model.ModelTemplate;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.EntityModelSet;
+import net.minecraft.client.model.geom.ModelLayers;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.RenderLayerParent;
+import net.minecraft.client.renderer.entity.layers.EnergySwirlLayer;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.client.renderer.entity.layers.WitherArmorLayer;
+import net.minecraft.client.renderer.entity.state.WitherRenderState;
 import net.minecraft.client.resources.model.EquipmentClientInfo;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.equipment.Equippable;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.extensions.IBakedModelExtension;
+import net.neoforged.neoforge.client.extensions.ITexturedModelExtension;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.roadkill.redev.client.model.armor.HoglinHideCloakModel;
 import net.roadkill.redev.client.model.armor.HoglinHideHeadModel;
 import net.roadkill.redev.client.model.armor.HoglinHideHoovesModel;
 import net.roadkill.redev.client.model.entity.HoveringInfernoModel;
+import net.roadkill.redev.client.model.entity.WitherBossModel;
 import net.roadkill.redev.client.renderer.entity.*;
 import net.roadkill.redev.core.init.EntityInit;
 import net.roadkill.redev.core.init.ItemInit;
+
+import java.util.function.UnaryOperator;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class RegisterEntityRenderers
@@ -51,6 +72,32 @@ public class RegisterEntityRenderers
         }
     };
 
+
+
+    @OnlyIn(Dist.CLIENT)
+    public static class WitherNewLayer extends RenderLayer<WitherRenderState, net.minecraft.client.model.WitherBossModel> {
+        private static final ResourceLocation WITHER_ARMOR_LOCATION = ResourceLocation.withDefaultNamespace("textures/entity/wither/wither_layer.png");
+        private final WitherBossModel model;
+
+        public WitherNewLayer(RenderLayerParent<WitherRenderState, net.minecraft.client.model.WitherBossModel> renderer, EntityModelSet modelSet) {
+            super(renderer);
+            this.model = new WitherBossModel(modelSet.bakeLayer(WitherBossModel.WITHER_NEW));
+        }
+
+        protected WitherBossModel model() {
+            return this.model;
+        }
+
+        @Override
+        public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int i, WitherRenderState renderState, float v, float v1) {
+
+        }
+
+        public WitherBossModel getModel() {
+            return model;
+        }
+    }
+
     public static void checkForInitModels()
     {
         if (HOGLIN_HIDE_HEAD_MODEL != null) return;
@@ -69,6 +116,15 @@ public class RegisterEntityRenderers
         event.registerEntityRenderer(EntityInit.DURIAN_THORN.get(), DurianThornRenderer::new);
         event.registerEntityRenderer(EntityInit.DURIAN_THORN.get(), DurianThornRenderer::new);
         event.registerEntityRenderer(EntityInit.HOVERING_INFERNO.get(), HoveringInfernoRenderer::new);
+
+        event.registerEntityRenderer(EntityInit.WITHER_WRAITH.get(), WitherWraithRenderer::new);
+    }
+
+    //todo
+    @SubscribeEvent
+    public static void modifyEntityRenderers(EntityRenderersEvent.AddLayers event) {
+        MobRenderer<WitherBoss, WitherRenderState, net.minecraft.client.model.WitherBossModel> renderer = event.getRenderer(EntityType.WITHER);
+        if (renderer != null) renderer.addLayer(new WitherNewLayer(renderer, event.getContext().getModelSet()));
     }
 
     @SubscribeEvent
@@ -79,6 +135,8 @@ public class RegisterEntityRenderers
         event.registerLayerDefinition(HoglinHideHeadModel.LAYER_LOCATION, HoglinHideHeadModel::createArmorLayer);
         event.registerLayerDefinition(HoglinHideCloakModel.LAYER_LOCATION, HoglinHideCloakModel::createArmorLayer);
         event.registerLayerDefinition(HoglinHideHoovesModel.LAYER_LOCATION, HoglinHideHoovesModel::createArmorLayer);
+
+        event.registerLayerDefinition(WitherBossModel.WITHER_NEW, WitherBossModel::createBodyLayer);
     }
 
     @SubscribeEvent
