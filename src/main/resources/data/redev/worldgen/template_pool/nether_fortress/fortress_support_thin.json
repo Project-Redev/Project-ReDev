@@ -1,0 +1,16 @@
+{
+  "fallback": "minecraft:empty",
+  "elements":
+  [
+    {
+      "weight": 70,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_support_thin",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

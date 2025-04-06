@@ -1,0 +1,106 @@
+{
+  "fallback": "redev:nether_fortress/fortress_bridge_no_cross",
+  "elements":
+  [
+    {
+      "weight": 150,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_hallway",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 80,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_hallway_ruined",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 50,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_hallway_chest",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 8,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_hallway_end_ruined",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_nether_wart",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_well",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_balcony",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 20,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_hallway_stash",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 30,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_hallway_stairs",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_quarters",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

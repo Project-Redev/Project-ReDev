@@ -1,0 +1,66 @@
+{
+  "fallback": "redev:nether_fortress/fortress_bridge_end",
+  "elements":
+  [
+    {
+      "weight": 100,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_bridge",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 60,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_bridge_supported",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 40,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_bridge_shielded",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 20,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_bridge_end",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_bridge_ruined",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 40,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_blaze_spawner",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "fallback": "minecraft:empty",
+  "elements":
+  [
+    {
+      "weight": 70,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_support",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_support_ruined",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

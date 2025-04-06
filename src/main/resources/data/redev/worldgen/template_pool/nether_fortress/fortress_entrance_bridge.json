@@ -1,0 +1,16 @@
+{
+  "fallback": "redev:nether_fortress/fortress_bridge_no_cross",
+  "elements":
+  [
+    {
+      "weight": 70,
+      "element":
+      {
+        "location": "redev:nether_fortress/fortress_entrance_bridge",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
