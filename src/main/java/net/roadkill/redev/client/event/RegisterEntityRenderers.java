@@ -18,6 +18,7 @@ import net.roadkill.redev.client.model.armor.HoglinHideHeadModel;
 import net.roadkill.redev.client.model.armor.HoglinHideHoovesModel;
 import net.roadkill.redev.client.model.entity.HoveringInfernoModel;
 import net.roadkill.redev.client.renderer.entity.*;
+import net.roadkill.redev.common.entity.arrows.DripstoneArrowEntity;
 import net.roadkill.redev.core.init.EntityInit;
 import net.roadkill.redev.core.init.ItemInit;
 
@@ -74,6 +75,8 @@ public class RegisterEntityRenderers
         event.registerEntityRenderer(EntityInit.AMETHYST_ARROW.get(), AmethystArrowRenderer::new);
         event.registerEntityRenderer(EntityInit.QUARTZ_ARROW.get(), QuartzArrowRenderer::new);
         event.registerEntityRenderer(EntityInit.OBSIDIAN_ARROW.get(), ObsidianArrowRenderer::new);
+        event.registerEntityRenderer(EntityInit.DRIPSTONE_ARROW.get(), DripstoneArrowRenderer::new);
+        event.registerEntityRenderer(EntityInit.HOMING_ARROW.get(), HomingArrowRenderer::new);
 
         event.registerEntityRenderer(EntityInit.INK_ARROW.get(), InkArrowRenderer::new);
     }

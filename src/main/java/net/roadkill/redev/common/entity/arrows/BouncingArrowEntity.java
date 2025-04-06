@@ -56,9 +56,8 @@ public class BouncingArrowEntity extends CustomArrowsBaseEntity {
 
         }
         else {
-             if (!this.isInGround()) this.level().explode(this, Explosion.getDefaultDamageSource(this.level(), this), null, this.getX(), this.getY(0.0625), this.getZ(),3, false, Level.ExplosionInteraction.TNT);
-
-            super.onHitBlock(result);
+          super.onHitBlock(result);
+          discard();
         }
 
     }

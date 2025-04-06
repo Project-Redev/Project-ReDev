@@ -52,7 +52,7 @@ public class InkArrowEntity extends CustomArrowsBaseEntity {
             entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS,10*16,1));
             if(level().isClientSide) return;
             ((ServerLevel) level()).sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, Blocks.BLACK_WOOL.defaultBlockState()),
-                    entity.position().x,entity.position().y,entity.position().z,20,3,3,3,4);
+                    entity.position().x,entity.position().y,entity.position().z,40,0.2,1,0.2,2);
         });
 
     }

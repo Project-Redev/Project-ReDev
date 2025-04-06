@@ -32,6 +32,16 @@ public class EntityInit
     public static final DeferredHolder<EntityType<?>, EntityType<ObsidianArrowEntity>> OBSIDIAN_ARROW = ENTITY_TYPES.register("obsidian_arrow", () ->
             EntityType.Builder.of(ObsidianArrowEntity::new, MobCategory.MISC).sized(0.5f, 0.5f)
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "obsidian_arrow"))));
+
+
+    public static final DeferredHolder<EntityType<?>, EntityType<HomingArrowEntity>> HOMING_ARROW = ENTITY_TYPES.register("homing_arrow", () ->
+            EntityType.Builder.of(HomingArrowEntity::new, MobCategory.MISC).sized(0.5f, 0.5f)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "homing_arrow"))));
+
+
+    public static final DeferredHolder<EntityType<?>, EntityType<DripstoneArrowEntity>> DRIPSTONE_ARROW = ENTITY_TYPES.register("dripstone_arrow", () ->
+            EntityType.Builder.of(DripstoneArrowEntity::new, MobCategory.MISC).sized(0.5f, 0.5f)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "dripstone_arrow"))));
     public static final DeferredHolder<EntityType<?>, EntityType<InkArrowEntity>> INK_ARROW = ENTITY_TYPES.register("ink_arrow", () ->
             EntityType.Builder.of(InkArrowEntity::new, MobCategory.MISC).sized(0.5f, 0.5f)
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ReDev.MOD_ID, "ink_arrow"))));

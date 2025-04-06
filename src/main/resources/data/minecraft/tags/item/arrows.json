@@ -7,7 +7,10 @@
 	"redev:quartz_arrow",
 	"redev:amethyst_arrow",
 	"redev:obsidian_arrow",
-	"redev:ink_arrow"
+	"redev:ink_arrow",
+	"redev:homing_arrow",
+	"redev:dripstone_arrow"
+	
 	
   ]
 }

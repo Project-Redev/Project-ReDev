@@ -17,10 +17,10 @@ import org.joml.Vector3f;
 public abstract class CustomArrowsBaseEntity extends AbstractArrow {
 
 
-    @Override
-    protected boolean tryPickup(Player player) {
-        return false;
-    }
+  // @Override
+  // protected boolean tryPickup(Player player) {
+  //     return false;
+  // }
 
 
     public CustomArrowsBaseEntity(EntityType type, Level level){

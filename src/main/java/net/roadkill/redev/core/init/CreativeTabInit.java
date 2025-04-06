@@ -362,6 +362,15 @@ public class CreativeTabInit
             injectItemsAfter(Items.ARROW.getDefaultInstance(), event, List.of(
                     ItemInit.QUARTZ_ARROW.value()
             ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            injectItemsAfter(Items.ARROW.getDefaultInstance(), event, List.of(
+                    ItemInit.HOMING_ARROW.value()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            injectItemsAfter(Items.ARROW.getDefaultInstance(), event, List.of(
+                    ItemInit.DRIPSTONE_ARROW.value()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            injectItemsAfter(Items.ARROW.getDefaultInstance(), event, List.of(
+                    ItemInit.AMETHYST_ARROW.value()
+            ), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         /*
