@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "redev:block/basalt_diamond_ore"
+    "end": "redev:block/basalt_diamond_ore_top",
+    "side": "minecraft:block/basalt_side"
   }
 }
