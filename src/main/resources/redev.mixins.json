@@ -44,7 +44,6 @@
     "MixinTwistingVineGen",
     "MixinTwistingVines",
     "MixinWalkSnow",
-    "MixinWitherBoss",
     "WitherSkeletonArsenal"
   ],
   "client": [
@@ -59,7 +58,6 @@
     "MixinPigTNTRenderer",
     "MixinPigTNTRenderer$MixinPigRenderState",
     "MixinPotionItem$MixinReducePotionGlint",
-    "MixinWitherBossRenderer",
     "MixinZombieModel"
   ],
   "injectors": {

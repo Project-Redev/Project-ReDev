@@ -5,7 +5,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.roadkill.redev.common.entity.LithicanEntity;
 import net.roadkill.redev.common.entity.RevenantEntity;
-import net.roadkill.redev.common.entity.WitherWraith;
 import net.roadkill.redev.core.init.EntityInit;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
@@ -15,7 +14,5 @@ public class RegisterAttributes
     public static void onRegisterAttributes(EntityAttributeCreationEvent event)
     {   event.put(EntityInit.LITHICAN.get(), LithicanEntity.createAttributes().build());
         event.put(EntityInit.REVENANT.get(), RevenantEntity.createAttributes().build());
-
-        event.put(EntityInit.WITHER_WRAITH.get(), WitherWraith.createAttributes().build());
     }
 }
