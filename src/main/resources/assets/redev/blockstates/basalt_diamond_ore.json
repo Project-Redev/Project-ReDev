@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "redev:block/basalt_diamond_ore",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "redev:block/basalt_diamond_ore"
+    },
+    "axis=z": {
+      "model": "redev:block/basalt_diamond_ore",
+      "x": 90
     }
   }
 }

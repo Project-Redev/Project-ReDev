@@ -1,25 +1,46 @@
 package net.roadkill.redev.client.event;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.data.models.model.ModelTemplate;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.EntityModelSet;
+import net.minecraft.client.model.geom.ModelLayers;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.RenderLayerParent;
+import net.minecraft.client.renderer.entity.layers.EnergySwirlLayer;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.client.renderer.entity.layers.WitherArmorLayer;
+import net.minecraft.client.renderer.entity.state.WitherRenderState;
 import net.minecraft.client.resources.model.EquipmentClientInfo;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.equipment.Equippable;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.extensions.IBakedModelExtension;
+import net.neoforged.neoforge.client.extensions.ITexturedModelExtension;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.roadkill.redev.client.model.armor.HoglinHideCloakModel;
 import net.roadkill.redev.client.model.armor.HoglinHideHeadModel;
 import net.roadkill.redev.client.model.armor.HoglinHideHoovesModel;
 import net.roadkill.redev.client.model.entity.HoveringInfernoModel;
+import net.roadkill.redev.client.model.entity.WitherBossModel;
 import net.roadkill.redev.client.renderer.entity.*;
 import net.roadkill.redev.core.init.EntityInit;
 import net.roadkill.redev.core.init.ItemInit;
+
+import java.util.function.UnaryOperator;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class RegisterEntityRenderers
@@ -69,6 +90,7 @@ public class RegisterEntityRenderers
         event.registerEntityRenderer(EntityInit.DURIAN_THORN.get(), DurianThornRenderer::new);
         event.registerEntityRenderer(EntityInit.DURIAN_THORN.get(), DurianThornRenderer::new);
         event.registerEntityRenderer(EntityInit.HOVERING_INFERNO.get(), HoveringInfernoRenderer::new);
+
     }
 
     @SubscribeEvent
